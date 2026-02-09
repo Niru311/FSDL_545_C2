@@ -1,0 +1,275 @@
+:root {
+  --primary: #0F4C81;
+  --accent: #4B9CD3;
+  --light: #F4F6F9;
+  --dark: #1F2933;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: white;
+  color: var(--dark);
+  line-height: 1.6;
+  padding-top: 80px;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 85%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: var(--primary);
+  padding: 12px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-wrapper {
+  position: relative;
+}
+
+.nav-container {
+  width: 85%;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.nav-container::-webkit-scrollbar {
+  display: none;
+}
+
+.logo {
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-right: 15px;
+}
+
+.nav-links {
+  list-style: none;
+  display: inline-flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Scroll indicators */
+.scroll-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: white;
+  padding: 5px 10px;
+  background: linear-gradient(to right, rgba(15,76,129,0.8), transparent);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1001;
+}
+
+.scroll-indicator.left { left: 0; }
+
+.scroll-indicator.right {
+  right: 0;
+  background: linear-gradient(to left, rgba(15,76,129,0.8), transparent);
+}
+
+.scroll-indicator.show {
+  opacity: 1;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 15px;
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+}
+
+/* ================= HERO ================= */
+.hero {
+  background: linear-gradient(135deg, var(--primary), #163d63);
+  color: white;
+  padding: 120px 0 100px 0;
+  margin-top: -1px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.tagline {
+  margin: 15px 0 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  margin: 5px;
+  border-radius: 30px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid white;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 70px 0;
+}
+
+.section.light {
+  background: var(--light);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--primary);
+}
+
+.about-text {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.skill-card {
+  background: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Certifications */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.cert-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+}
+
+.cert-card h3 {
+  color: var(--primary);
+}
+
+.cert-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Education */
+.edu-card {
+  background: var(--primary);
+  color: white;
+  padding: 18px;
+  margin: 12px 0;
+  border-radius: 8px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.edu-card:hover {
+  transform: translateY(-4px);
+  background: #163d63;
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
