@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validation Form</title>
+  <style>
+    /* Pantone-inspired green theme (close to Pantone 17-6154 TCX Greenery vibes) */
+    :root {
+      --green-main: #6BAA75;
+      --green-dark: #3F7F5B;
+      --green-light: #E6F2EC;
+      --error-red: #C0392B;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--green-light), #ffffff);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-card {
+      background: white;
+      padding: 30px;
+      width: 360px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .form-card h2 {
+      text-align: center;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--green-dark);
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 14px;
+    }
+
+    input:focus {
+      border-color: var(--green-main);
+    }
+
+    .error {
+      font-size: 12px;
+      color: var(--error-red);
+      margin-top: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--green-main);
+      border: none;
+      color: white;
+      font-size: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--green-dark);
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: var(--green-light);
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-card">
+    <h2>Registration Form</h2>
+
+    <form id="myForm" novalidate>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" />
+        <div class="error" id="nameError"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" />
+        <div class="error" id="emailError"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" />
+        <div class="error" id="passwordError"></div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      ✅ Submission successful!
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("myForm");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let isValid = true;
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      document.getElementById("nameError").textContent = "";
+      document.getElementById("emailError").textContent = "";
+      document.getElementById("passwordError").textContent = "";
+
+      if (name === "") {
+        document.getElementById("nameError").textContent = "Name is required";
+        isValid = false;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById("emailError").textContent = "Enter a valid email";
+        isValid = false;
+      }
+
+      if (password.length < 6) {
+        document.getElementById("passwordError").textContent = "Password must be at least 6 characters";
+        isValid = false;
+      }
+
+      if (isValid) {
+        form.reset();
+        document.getElementById("successMessage").style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
