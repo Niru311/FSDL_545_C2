@@ -1,0 +1,1 @@
+c:\xampp\htdocs\student_crud\delete.php c:\xampp\htdocs\student_crud\index.html c:\xampp\htdocs\student_crud\insert.php c:\xampp\htdocs\student_crud\search.php c:\xampp\htdocs\student_crud\update.php c:\xampp\htdocs\student_crud\view.php

@@ -1,0 +1,229 @@
+/* RESET */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f1f5f9;
+}
+
+/* NAVBAR */
+.navbar {
+  background: linear-gradient(to right, #1e3a8a, #2563eb);
+  padding: 15px;
+  text-align: center;
+}
+
+.navbar button {
+  margin: 5px;
+  padding: 10px 20px;
+  background: white;
+  color: #1e3a8a;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.navbar button:hover {
+  background: #dbeafe;
+}
+
+/* CARD (Calculator + Form) */
+.card {
+  background: white;
+  padding: 20px;
+  margin: 30px auto;
+  width: 60%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* INPUTS */
+input, textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* BUTTONS */
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+/* RESUME LAYOUT */
+.container {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+/* LEFT FORM */
+.form {
+  width: 50%;
+  padding: 20px;
+  background: #f8fafc;
+  overflow-y: auto;
+}
+
+/* RIGHT PREVIEW */
+.preview {
+  width: 50%;
+  padding: 40px;
+  background: white;
+  border-left: 2px solid #ddd;
+}
+
+/* PREVIEW TEXT */
+.preview h1 {
+  margin-bottom: 5px;
+  font-size: 28px;
+}
+
+.preview p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.preview h3 {
+  margin-top: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  color: #1e3a8a;
+}
+
+/* SCROLL FIX */
+.form::-webkit-scrollbar {
+  width: 6px;
+}
+
+.form::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+/* CALCULATOR */
+.calc {
+  width: 350px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.display {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-align: right;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* GRID LAYOUT */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* BUTTON STYLE */
+.grid button {
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.grid button:hover {
+  background: #1e40af;
+}
+
+/* EQUAL BUTTON */
+.equal {
+  background: #16a34a !important;
+}
+/* SECTION CARDS (LEFT SIDE) */
+.section {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.section h4 {
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+/* FORM TITLE */
+.form h2 {
+  margin-bottom: 20px;
+}
+
+/* PREVIEW IMPROVEMENTS */
+.preview {
+  line-height: 1.6;
+}
+
+.preview h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.preview h3 {
+  margin-top: 20px;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 5px;
+}
+
+/* ADD NICE SPACING */
+.preview p {
+  margin: 8px 0;
+}
+.resume-body {
+  display: flex;
+  gap: 20px;
+}
+
+.left {
+  width: 35%;
+}
+
+.right {
+  width: 65%;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags span {
+  background: #2563eb;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.preview {
+  position: sticky;
+  top: 70px;
+  height: 90vh;
+  overflow-y: auto;
+}
